@@ -145,7 +145,7 @@ body {
 
 .test-item.prev { animation: prev .5s; }
 
-.test-item.prev2 { animation: prev .5s reverse; }
+.test-item.prev2 { animation: prev .4s reverse; }
 
 @keyframes next {
   0% {
@@ -160,7 +160,7 @@ body {
 
 .test-item.next { animation: next .5s; }
 
-.test-item.next2 { animation: next .5s reverse; }
+.test-item.next2 { animation: next .4s reverse; }
 
 .test-item:nth-child(1) { background-color: hsl(36 * 1, 100, 50); }
 .test-item:nth-child(2) { background-color: hsl(36 * 2, 100, 50); }

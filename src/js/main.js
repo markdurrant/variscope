@@ -56,9 +56,32 @@ function prevItem () {
   nextItem.one('animationend', function(e) {
     $(this).toggleClass('prev2 current');
   })
-
-  // previousItem.addClass('next');
-  // previousItem.one('animationend', function(e) {
-  //   $(this).toggleClass('next current');
-  // });
 }
+
+$(window).keypress(function(e) {
+  var ev = e || window.event;
+
+  if(ev.keyCode === 119) {
+    nextItem();
+  } else if (ev.keyCode === 115) {
+    prevItem();
+  }
+});
+
+
+
+// $(function() {
+//    $(window).keypress(function(e) {
+//        var ev = e || window.event;
+//        var key = ev.keyCode || ev.which;
+//        //do stuff with "key" here...
+//        var new_div = $('<div/>');
+//        new_div.hide();
+//        new_div.css('color', 'darkgreen');
+//        new_div.html('key code ' + key + ' was pressed!');
+//        $('body').append(new_div);
+//        new_div.fadeIn();
+//    });
+// });
+
+
