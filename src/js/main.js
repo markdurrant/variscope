@@ -29,23 +29,36 @@
 // TEST
 //===============================================================================
 function nextItem () {
-  var currentItem = $('.test-item.current');
+  var currentItem = $('.test-item.current'),
+      previousItem = currentItem.prev();
 
   currentItem.toggleClass('current prev');
-
-  currentItem.one('animationend',
-    function(e) {
-
+  currentItem.one('animationend', function(e) {
     $(this).removeClass('current prev');
-
   });
 
-  currentItem.prev().addClass('next');
-
-  currentItem.prev().one('animationend',
-    function(e) {
-
+  previousItem.addClass('next');
+  previousItem.one('animationend', function(e) {
     $(this).toggleClass('next current');
-
   });
+}
+
+function prevItem () {
+  var currentItem = $('.test-item.current'),
+      nextItem = currentItem.next();
+
+  currentItem.toggleClass('current next2');
+  currentItem.one('animationend', function(e) {
+    $(this).removeClass('current next2');
+  });
+
+  nextItem.addClass('prev2');
+  nextItem.one('animationend', function(e) {
+    $(this).toggleClass('prev2 current');
+  })
+
+  // previousItem.addClass('next');
+  // previousItem.one('animationend', function(e) {
+  //   $(this).toggleClass('next current');
+  // });
 }

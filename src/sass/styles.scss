@@ -125,7 +125,9 @@ body {
 
   &.current,
   &.next,
-  &.prev {
+  &.next2,
+  &.prev,
+  &.prev2 {
     display: block;
   }
 }
@@ -141,7 +143,9 @@ body {
   }
 }
 
-.test-item.prev { animation: prev .25s; }
+.test-item.prev { animation: prev .5s; }
+
+.test-item.prev2 { animation: prev .5s reverse; }
 
 @keyframes next {
   0% {
@@ -156,6 +160,7 @@ body {
 
 .test-item.next { animation: next .5s; }
 
+.test-item.next2 { animation: next .5s reverse; }
 
 .test-item:nth-child(1) { background-color: hsl(36 * 1, 100, 50); }
 .test-item:nth-child(2) { background-color: hsl(36 * 2, 100, 50); }
